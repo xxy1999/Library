@@ -1,0 +1,110 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_M.master.cs" Inherits="MasterPage_M" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <style type="text/css">  
+    #mh
+    {
+        background:#151E26;
+     }
+    #mh:hover
+    {
+        background:rgba(24,144,255,1);
+    }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="menu1">
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/log.png" CssClass="log" />
+        <br />
+            <div id="firstpane" class="menu_list">
+                <p class="menu_head">读者管理</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="ReaderType.aspx">读者类型管理</a>
+                  <a href="ReaderInfo.aspx">读者档案管理</a>
+                </div>
+                <p class="menu_head">图书管理</p>
+                <div style="display:none" class="menu_body" >
+                    <a href="BookcaseManage.aspx">书架管理</a>
+                    <a href="BookType.aspx">图书类型管理</a>
+                    <a href="BookInfoManage.aspx">图书档案管理</a>
+                </div>
+                <p class="menu_head">图书借还</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="Borrow.aspx">图书借阅</a>
+                  <a href="Return.aspx">图书归还</a>
+                  <a href="Renew.aspx">图书续借</a>
+                  
+                </div>
+                <p class="menu_head">查询</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="BookInfoSearch.aspx">图书档案查询</a>
+                  <a href="BookBorrowSearch.aspx">图书借阅查询</a>
+                </div>
+                 <p class="menu_head" id="mh"><a href="Rank.aspx" style="text-decoration:none;color:white">图书借阅排行</a></p>
+
+                <p class="menu_head">个人中心</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="Change.aspx">修改密码</a>
+                  <a href="../Login.aspx">退出系统</a>
+                </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+//            $("#firstpane .menu_body:eq(0)").show();
+            $("#firstpane p.menu_head").click(function () {
+                $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+                $(this).siblings().removeClass("current");
+            });
+            $("#secondpane .menu_body:eq(0)").show();
+            $("#secondpane p.menu_head").mouseover(function () {
+                $(this).addClass("current").next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+                $(this).siblings().removeClass("current");
+            });
+
+        });
+</script>
+
+    <%--    <asp:Menu ID="Menu1" runat="server" BackColor="#151E26" 
+            DynamicHorizontalOffset="2" Font-Names="Alibaba PuHuiTi" Font-Size="18px" 
+            ForeColor="#FFFFFF" StaticSubMenuIndent="2px"  CssClass="menu1" StaticEnableDefaultPopOutImage="False">
+            <DynamicHoverStyle BackColor="#1890FF" ForeColor="White" />
+            <DynamicMenuItemStyle HorizontalPadding="70px" VerticalPadding="25px" />
+            <DynamicMenuStyle BackColor="#151E26" />
+            <DynamicSelectedStyle BackColor="#1890FF" />
+            <Items>
+                <asp:MenuItem Text=" 图书借阅" Value="图书借阅" NavigateUrl="Borrow.aspx" ImageUrl="../images/首页2.png" PopOutImageUrl="../images/jiantou.png">
+                </asp:MenuItem>
+                <asp:MenuItem Text=" 借阅查询" Value="借阅查询" ImageUrl="../images/订单2.png" NavigateUrl="BookBorrowSearch.aspx"></asp:MenuItem>
+                <asp:MenuItem Text=" 借阅排行" Value="借阅排行" ImageUrl="../images/费用中心2.png"></asp:MenuItem>
+                
+                <asp:MenuItem Text=" 图书归还" Value="图书归还" ImageUrl="../images/企业管理2.png"></asp:MenuItem>
+                <asp:MenuItem Text=" 图书续借" Value="图书续借" ImageUrl="../images/人员2.png"></asp:MenuItem>
+                <asp:MenuItem Text=" 图书类别" Value="图书类别" ImageUrl="../images/服务管理2.png"></asp:MenuItem>
+                <asp:MenuItem Text=" 图书管理" Value="图书管理" ImageUrl="../images/费用中心2.png"></asp:MenuItem>
+            </Items>
+            <StaticHoverStyle BackColor="#1890FF" ForeColor="White" Width="75px"/>
+            <StaticMenuItemStyle HorizontalPadding="75px" VerticalPadding="25px" />
+            <StaticSelectedStyle BackColor="#1890FF" />
+        </asp:Menu>--%>
+      </div>  
+        
+        
+    <div id="main">
+    
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>  
+    </form>
+</body>
+</html>

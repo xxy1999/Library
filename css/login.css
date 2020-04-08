@@ -1,0 +1,89 @@
+﻿body 
+{
+    background-image:url("../images/background.png") ;
+    background-repeat:no-repeat;
+    background-position:center;
+    position:fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    min-width: 1000px;
+    z-index:-10;
+    zoom: 1;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+     -webkit-background-size: cover;
+     -o-background-size: cover;
+     background-position: center 0;
+
+    background-color:rgba(241,242,246,1);
+
+}
+#form1
+{
+     
+}
+#kuang
+{
+    width:626px;
+    height:288px;
+    background:rgba(255,255,255,1);
+    box-shadow:0px 3px 10px rgba(0,0,0,0.06);
+    opacity:1;
+    border-radius:4px;
+    margin-left:320px;
+    margin-top:250px;
+    padding-left:20px;
+    padding-top:25px;
+}
+.woman
+{
+    float:left;
+    height:230px;
+}
+.logi
+{
+    width:140px;
+    height:28px;
+    background:rgba(24,144,255,0.15);
+    border:1px solid rgba(24,144,255,0.14901960784313725);
+    opacity:1;
+    border-radius:4px;
+    margin-top:15px;
+    font-size:14px;
+    font-family:Alibaba PuHuiTi;
+    font-weight:400;
+    line-height:22px;
+    color:rgba(0,0,0,0.85);
+    opacity:1;
+
+
+ }
+ #content
+ {
+    float:right;
+    margin-right:40px;
+    margin-top:15px;   
+ }
+ .btt
+ {
+    width:180px;
+    height:28px;
+    background:rgba(24,144,255,1);
+    opacity:1;
+    border:1px solid rgba(24,144,255,1);
+    border-radius:4px;
+    font-size:16px;
+    font-family:Alibaba PuHuiTi;
+    font-weight:400;
+    line-height:22px;
+    color:rgba(255,255,255,1);
+    letter-spacing: 20px;
+    opacity:1;
+    padding-left:20px;
+    margin-top:15px;
+    margin-left:20px;
+
+ }

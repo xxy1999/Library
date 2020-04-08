@@ -1,0 +1,85 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage_SM.master.cs" Inherits="Super_Manager_MasterPage_SM" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../css/index.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <style type="text/css">  
+    #mh
+    {
+        background:#151E26;
+     }
+    #mh:hover
+    {
+        background:rgba(24,144,255,1);
+    }
+    </style>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="menu1">
+        <asp:Image ID="Image1" runat="server" ImageUrl="~/images/log.png" CssClass="log" />
+        <br />
+            <div id="firstpane" class="menu_list">
+
+                <p class="menu_head" id="mh"><a href="Account.aspx" style="text-decoration:none;color:white">管理员信息</a></p>
+
+                <p class="menu_head">图书管理</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="BookcaseManage.aspx">书架管理</a>
+                  <a href="BookType.aspx">图书类型管理</a>
+                  <a href="BookInfoManage.aspx">图书信息管理</a>
+                </div>
+
+                <p class="menu_head">读者管理</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="ReaderType.aspx">读者类型管理</a>
+                  <a href="ReaderInfo.aspx">读者档案管理</a>
+                </div>
+                <p class="menu_head">查询</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="BookInfoSearch.aspx">图书信息查询</a>
+                  <a href="BookBorrowSearch.aspx">图书借阅查询</a>
+                </div>
+              
+                <p class="menu_head" id="mh"><a href="Local.aspx" style="text-decoration:none;color:white">图书馆信息</a></p>
+
+                <p class="menu_head">个人中心</p>
+                <div style="display:none" class="menu_body" >
+                  <a href="Change.aspx">修改密码</a>
+                  <a href="../Login.aspx">退出系统</a>
+                </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+         //   $("#firstpane .menu_body:eq(0)").show();
+            $("#firstpane p.menu_head").click(function () {
+                $(this).addClass("current").next("div.menu_body").slideToggle(300).siblings("div.menu_body").slideUp("slow");
+                $(this).siblings().removeClass("current");
+            });
+            $("#secondpane .menu_body:eq(0)").show();
+            $("#secondpane p.menu_head").mouseover(function () {
+                $(this).addClass("current").next("div.menu_body").slideDown(500).siblings("div.menu_body").slideUp("slow");
+                $(this).siblings().removeClass("current");
+            });
+
+        });
+    </script>
+    </div>
+
+    <div id="main">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+
+
+    </form>
+
+</body>
+</html>
